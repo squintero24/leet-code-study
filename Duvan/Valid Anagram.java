@@ -34,3 +34,33 @@ class Solution {
         }
     }
 }
+
+
+//SOLUCION MÁS SIMPLE
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        Set<String> letras1 = new HashSet<>();
+        Set<String> letras2 = new HashSet<>();
+
+        char[] s1 = s.toCharArray();
+        char[] s2 = t.toCharArray();
+
+        for(char caracter: s1){
+            letras1.add(String.valueOf(caracter));
+        }
+        for(char caracter: s2){
+            letras2.add(String.valueOf(caracter));
+        }
+        if (s.length() != t.length()) {
+            return false; // Si tienen diferente longitud, no pueden ser anagramas
+        }    
+        if(letras1.equals(letras2)){
+            return true;
+        }else{
+            return false;
+        }
+        
+
+    }
+}
