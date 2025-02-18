@@ -29,19 +29,12 @@ class Solution {
                 hashColumna.put(numeroEnColumna, hashColumna.get(numeroEnColumna) != null ? hashColumna.get(numeroEnColumna) + 1 : 1 );
                 hashGrupo.putIfAbsent(grupo, new HashSet<>());
 
-                System.out.println(grupo + "-" + j);
-
-
                 var repeted = !hashGrupo.get(grupo).add(numeroEnFila); 
-
-                System.out.println(grupo + "-" + j);
 
 
                 if(((repeted || hashFila.get(numeroEnFila) > 1) && numeroEnFila != 0) || (hashColumna.get(numeroEnColumna) > 1 && numeroEnColumna != 0)) {
                     return false;
                 }
-
-                System.out.println(grupo + "-" + j);
 
                 grupo = (j + 1) % 3 == 0 ? grupo + 1 : grupo;
 
